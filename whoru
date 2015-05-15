@@ -1,8 +1,14 @@
 #!/bin/sh
 #
-# whoru - who are you? 
+# Copyright (c) 2012, Henrik Hallberg (henrik@k2h.se)
+# All rights reserved.
 #
+# See LICENSE
+#
+# whoru - who are you? 
 # show your linux distribution name and version.
+#
+# git clone https://github.com/zixia/whoru
 #
 
 
@@ -69,6 +75,6 @@ DISTRIBUTION=$( echo $DISTRIBUTION | awk '{print tolower($0)}' )
 VERSION=$( echo $VERSION | awk '{print tolower($0)}' )
 HARDWARE=$( echo $HARDWARE | awk '{print tolower($0)}' )
 
-echo "WHORU_DIST=$DISTRIBUTION"
+echo "WHORU_DIST='$DISTRIBUTION'"
 echo "WHORU_VER=$VERSION"
 echo "WHORU_ARCH=$HARDWARE"
