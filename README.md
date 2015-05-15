@@ -1,10 +1,9 @@
 # whoru
 whoru is a command line tool that query name/version/arch of a linux distribution. it's like whoami, who query the uid/name/group of a user.
 
- - WHORU_DIST   = distribution name
- - WHORU_VER    = version
- - WHORU_ARCH   = architecture
-W_
+ - WHORU\_DIST   = distribution name
+ - WHORU\_VER    = version
+ - WHORU\_ARCH   = architecture
 
 ## Example
 
