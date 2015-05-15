@@ -1,0 +1,74 @@
+#!/bin/sh
+#
+# whoru - who are you? 
+#
+# show your linux distribution name and version.
+#
+
+
+whoru_linux() {
+    for RELEASE_FILE in /etc/*-release ; do
+        [ -f $RELEASE_FILE ] || continue # file not exist, continue
+        [ -L $RELEASE_FILE ] && continue # file is a sym link, continue
+
+        # KEY=VALUE formated, ie /etc/os-release
+        if [ `wc -l $RELEASE_FILE|awk '{print $1}'` -gt 1 ]; then
+            . $RELEASE_FILE > /dev/null 2>&1
+            [ -n "$ID" ] && DISTRIBUTION=$ID
+            [ -n "$VERSION_ID" ] && VERSION=`echo $VERSION_ID | egrep -o [0-9]+ | head -1`
+            continue
+        fi
+
+        # string formated, ie "Fedora Core Release 6 (Zod)", which should not include "="
+        TMP=$( grep -v "=" $RELEASE_FILE 2>/dev/null | sed -r "s/^([a-zA-Z ]*)release *([0-9]*).*$/\1/i" )
+        if [ -n "$TMP" ] ; then
+            DISTRIBUTION=$( echo $TMP | awk '{print tolower($0)}' )
+            VERSION=$( grep -v "=" $RELEASE_FILE | sed -r "s/^([a-zA-Z]*)[a-zA-Z ]*([0-9]*).*$/\2/" )  
+
+        fi
+    done
+
+    [ -z "$DISTRIBUTION" ] && return 1  # not match, return 1
+
+    return 0 # if no return, the return value of this function is unknown.
+}
+
+whoru_mac() {
+    DISTRIBUTION=$( sw_vers -productName 2>/dev/null );
+    VERSION=$( sw_vers -productVersion 2>/dev/null | awk -F '.' '{print $1}' )
+
+    [ -z "$DISTRIBUTION" ] && return 1 # not match, return 1
+
+    return 0 # if no return, the return value of this function is unknown.
+}
+
+whoru_openwrt() {
+    . /etc/openwrt_release 2>/dev/null
+    DISTRIBUTION=$DISTRIB_ID
+    VERSION=$( echo $DISTRIB_RELEASE | egrep -o [0-9]+ | head -1 )
+
+    [ -z "$DISTRIBUTION" ] && return 1
+
+    return 0 # if no return, the return value of this function is unknown.
+}
+
+#
+# check & show
+#
+whoru_linux \
+    || whoru_mac \
+    || whoru_openwrt
+
+HARDWARE=`uname -m`
+
+[ -z "$HARDWARE" ] 	&& HARDWARE="UNKNOWN"
+[ -z "$DISTRIBUTION" ] 	&& DISTRIBUTION="UNKNOWN"
+[ -z "$VERSION" ]	&& VERSION="0"
+
+DISTRIBUTION=$( echo $DISTRIBUTION | awk '{print tolower($0)}' )
+VERSION=$( echo $VERSION | awk '{print tolower($0)}' )
+HARDWARE=$( echo $HARDWARE | awk '{print tolower($0)}' )
+
+echo "WHORU_DIST=$DISTRIBUTION"
+echo "WHORU_VER=$VERSION"
+echo "WHORU_ARCH=$HARDWARE"
