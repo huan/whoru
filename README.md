@@ -20,3 +20,4 @@ Copy `whoru` file to /usr/local/bin, or anywhere that PATH could find.
 From now, whoru is very simple and only support very limited linux distribution, for example: redhat, fedora, centos, debian, mac os . 
 
 contribution is very welcome.
+
