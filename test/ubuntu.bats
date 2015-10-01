@@ -17,3 +17,7 @@ load test-helper
 @test "15.04 " {
     whoru ubuntu 15.04
 }
+
+@test "15.10 " {
+    whoru ubuntu 15.10
+}
