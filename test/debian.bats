@@ -1,15 +1,16 @@
 #!/usr/bin/env bats
 
-@test "Debian" {
-    for version in {7..8}
-    do
-        output=$( docker run --rm --name whoru -v `pwd`:/whoru -w /whoru debian:$version ./whoru )
-        [ "$?" = 0 ]
+load test-helper
 
-        eval $output
+@test "6" {
+    skip 'not support yet'
+    whoru debian 6
+}
 
-        [ "$WHORU_DIST" = 'debian' ]
-        [ "$WHORU_VER" = "$version" ]
-        [ "$WHORU_ARCH" = 'x86_64' ]
-    done
+@test "7" {
+    whoru debian 7
+}
+
+@test "8" {
+    whoru debian 8
 }

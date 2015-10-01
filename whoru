@@ -15,7 +15,7 @@
 whoru_linux() {
     for RELEASE_FILE in /etc/*-release ; do
         [ -f $RELEASE_FILE ] || continue # file not exist, continue
-        [ -L $RELEASE_FILE ] && continue # file is a sym link, continue
+        # [ -L $RELEASE_FILE ] && continue # file is a sym link, continue
 
         # KEY=VALUE formated, ie /etc/os-release
         if [ `wc -l $RELEASE_FILE|awk '{print $1}'` -gt 1 ]; then
