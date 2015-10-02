@@ -40,4 +40,4 @@ contribution is very welcome.
 
 [![Travis Status](https://travis-ci.org/zixia/whoru.svg)](https://travis-ci.org/zixia/whoru)
 
-[![CircleCI Status](https://circleci.com/gh/zixia/whoru.svg?&style=shield&circle-token=2cd2ae335cca6a4caf6237df8bb5753380065689)](https://circleci.com/gh/zixia/whoru "CircleCI Badge)
+[![CircleCI Status](https://circleci.com/gh/zixia/whoru.svg?&style=shield&circle-token=2cd2ae335cca6a4caf6237df8bb5753380065689)](https://circleci.com/gh/zixia/whoru)
