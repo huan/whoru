@@ -2,11 +2,19 @@ language: bash
 
 sudo: required
 
+env:
+  BATS_VERSION: 0.4.0
+
 services:
   - docker
 
-before_script:
-    - curl -s -L "https://github.com/sstephenson/bats/archive/v0.4.0.tar.gz"      | tar zxv 
-        && ln -s bats-0.4.0 bats
+install:
+    - curl -s -L "https://github.com/sstephenson/bats/archive/v${BATS_VERSION}.tar.gz" 
+        | tar zxv 
+        && ln -s bats-${BATS_VERSION} bats
 
 script: bats/bin/bats test
+
+notifications:
+  email:
+    - zixia@zixia.net
