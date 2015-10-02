@@ -34,3 +34,7 @@ From now, whoru is very simple and only support very limited linux distribution,
 contribution is very welcome.
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/zixia/whoru/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
