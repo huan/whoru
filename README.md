@@ -13,7 +13,7 @@ Project home - https://github.com/zixia/whoru
 eval `curl -s https://raw.githubusercontent.com/zixia/whoru/master/whoru | bash -`
 echo $WHORU_{DIST,VER,ARCH}
 ```
-will output
+will output (in this case we have a ubuntu box)
 
  > ubuntu 14 x86_64
 
@@ -26,6 +26,15 @@ will output
 ## Installation
 
 Copy `whoru` file to /usr/local/bin, or anywhere that PATH could find.
+
+## Test
+
+whoru use bats and docker to test itself.
+
+```bash
+bats test
+```
+will run a full test on every distributions and versions defined in the test directory.
 
 ## Bug
 
