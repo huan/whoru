@@ -2,7 +2,15 @@ function whoru {
     DIST=$1
     VERSION=$2
 
-    output=$(docker run --rm --name whoru -v `pwd`:/whoru -w /whoru $DIST:$VERSION ./whoru)
+    OPTS=' --rm '
+
+    [ "" != "$CIRCLECI" ] && {
+        # if inside CircleCI docker enviroment, --rm container would cause fatal error like
+        # "Error response from daemon: Cannot destroy container ..."
+        OPTS=''
+    }
+    
+    output=$(docker run $OPTS --name whoru -v `pwd`:/whoru -w /whoru $DIST:$VERSION ./whoru)
     [ "$?" = 0 ]
 
     eval "$output"
