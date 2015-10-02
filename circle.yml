@@ -1,0 +1,9 @@
+## Customize test commands
+test:
+  override:
+    - echo "Tested!"
+
+## Custom notifications
+notify:
+  webhooks:
+    - url: http://zixia.net/~zixia/git/pushme.php
