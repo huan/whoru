@@ -38,3 +38,6 @@ contribution is very welcome.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/zixia/whoru/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+[![Travis Status](https://travis-ci.org/zixia/whoru.svg)](https://travis-ci.org/zixia/whoru)
+
+[![CircleCI Status](https://circleci.com/gh/zixia/whoru.svg?&style=shield&circle-token=2cd2ae335cca6a4caf6237df8bb5753380065689)](https://circleci.com/gh/zixia/whoru "CircleCI Badge)
