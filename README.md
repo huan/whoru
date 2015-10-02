@@ -7,6 +7,16 @@ Project home - https://github.com/zixia/whoru
  - WHORU\_VER    = version
  - WHORU\_ARCH   = architecture
 
+## Usage
+
+```bash
+eval `curl -s https://raw.githubusercontent.com/zixia/whoru/master/whoru | bash -`
+echo $WHORU_{DIST,VER,ARCH}
+```
+will output
+
+ > ubuntu 14 x86_64
+
 ## Example
 
 ![whoru on debian](https://raw.githubusercontent.com/zixia/whoru/master/whoru-debian.png)
