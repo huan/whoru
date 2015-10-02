@@ -1,8 +1,10 @@
 machine:
   environment:
     BATS_VERSION: 0.4.0
-  pre:
-    - curl -s -L "https://github.com/sstephenson/bats/archive/v${BATS_VERSION}.tar.gz" 
+
+dependencies:
+  post:
+    - BATS_VERSION=0.4.0 curl -s -L "https://github.com/sstephenson/bats/archive/v${BATS_VERSION}.tar.gz" 
         | tar zxv 
         && ln -s bats-${BATS_VERSION} bats
 
