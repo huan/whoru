@@ -6,6 +6,7 @@ machine:
 
 dependencies:
   post:
+#   - add-apt-repository ppa:duggan/bats --yes
     - BATS_VERSION=0.4.0 curl -s -L "https://github.com/sstephenson/bats/archive/v${BATS_VERSION}.tar.gz" 
         | tar zxv 
         && ln -s bats-${BATS_VERSION} bats
