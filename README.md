@@ -43,6 +43,26 @@ $ bats test
 ```
 will run a full test on every distributions and versions defined in the test directory.
 
+```bash
+ $ bats test/
+ ✓ CentOS 5
+ ✓ CentOS 6
+ - CentOS 7 (skipped: not support yet)
+ - Debian 6 (skipped: not support yet)
+ ✓ Debian 7
+ ✓ Debian 8
+ ✓ Fedora 20
+ ✓ Fedora 21
+ ✓ Fedora 22
+ ✓ Ubuntu 12.04
+ ✓ Ubuntu 13.04
+ ✓ Ubuntu 14.04
+ ✓ Ubuntu 15.04
+ ✓ Ubuntu 15.10
+
+14 tests, 0 failures, 2 skipped
+```
+
 ### What is BATS?
 [BATS(Bash Automated Testing System)](https://github.com/sstephenson/bats) is a bash implementation of [TAP(Test Anything Protol)]( http://testanything.org)
 
