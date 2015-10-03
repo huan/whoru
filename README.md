@@ -6,7 +6,7 @@
 [![Code Climate](https://codeclimate.com/github/zixia/whoru/badges/gpa.svg)](https://codeclimate.com/github/zixia/whoru)
 
 # What is _whoru_?
-*whoru* is a command line tool that query name/version/arch of a linux distribution. it's like whoami, which query the uid/name/group of a user.
+**whoru** is a command line tool that query name/version/arch of a linux distribution. it's like whoami, which query the uid/name/group of a user.
 
 whoru github - https://github.com/zixia/whoru
 
@@ -39,10 +39,20 @@ Copy `whoru` file to /usr/local/bin, or anywhere that PATH could find.
 whoru use bats and docker to test itself.
 
 ```bash
-bats test
+$ bats test
 ```
 will run a full test on every distributions and versions defined in the test directory.
 
+### What is BATS?
+[BATS(Bash Automated Testing System)](https://github.com/sstephenson/bats) is a bash implementation of [TAP(Test Anything Protol)]( http://testanything.org)
+
+### Install BATS
+```bash
+$ BATS_VERSION=0.4.0 \
+    curl -s -L "https://github.com/sstephenson/bats/archive/v${BATS_VERSION}.tar.gz" 
+    | tar zxv 
+    && bats-${BATS_VERSION}/install.sh /usr/local
+```
 ## Bug
 
 From now, whoru is very simple and only support very limited linux distribution, for example: redhat, fedora, centos, debian, mac os . 
@@ -50,7 +60,7 @@ From now, whoru is very simple and only support very limited linux distribution,
 contribution is very welcome.
 
 ## Author
-LI Zhuohuan <zixia@zixia.net> https://github.com/zixia
+LI Zhuohuan <zixia@zixia.net> (https://github.com/zixia)
 
 ## Copyright & License
  - Code & Documentation 2015© zixia
