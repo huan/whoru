@@ -1,7 +1,7 @@
 # whoru
 [ ![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/zixia/whoru/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [ ![Travis Status](https://travis-ci.org/zixia/whoru.svg)](https://travis-ci.org/zixia/whoru)
-[ ![CircleCI Status](https://circleci.com/gh/zixia/whoru.svg?&style=shield&circle-token=2cd2ae335cca6a4caf6237df8bb5753380065689)](https://circleci.com/gh/zixia/whoru)
+[ ![CircleCI Status](https://circleci.com/gh/zixia/whoru.svg?&style=shield)](https://circleci.com/gh/zixia/whoru)
 [ ![Codeship Status for zixia/whoru](https://codeship.com/projects/686a3af0-4b10-0133-532e-7236a2d50232/status?branch=master)](https://codeship.com/projects/106106)
 [![Code Climate](https://codeclimate.com/github/zixia/whoru/badges/gpa.svg)](https://codeclimate.com/github/zixia/whoru)
 
